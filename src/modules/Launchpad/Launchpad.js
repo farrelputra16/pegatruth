@@ -28,16 +28,18 @@ function Launchpad(props) {
     
     switch (app) {
       case "terminal":
-        navigate("/terminal", { replace: true });
+        // Redirect to Twitter link
+        window.location.href = "https://x.com/Fartdragononsol";
         break;
       case "blog":
-        // Redirect to the Telegram link
-        window.location.href = "https://t.me/pegatruth";
+        // Redirect to Telegram link
+        window.location.href = "https://t.me/fartdragonn";
         break;
       default:
         break;
     }
   };
+
 
   const animateSignature = () => {
     const signature = document.getElementById("launchpadSignature");
@@ -123,13 +125,19 @@ function Launchpad(props) {
 
   return (
     <div id="launchpad" className="launchpad">
+      <div
+  className="background-placeholder"
+  style={{
+
+  }}
+></div>
       <canvas id="launchpadCanvas" className="launchpad-canvas"></canvas>
 
       <div className="launchpad-grid">
         <li id="terminalApp" className="launchpad-li" onClick={launchApp} data-app="terminal">
           <div className="launchpad-app">
             <img className="launchpad-icon" src={Braavos_Terminal_Icon} alt="Braavos Terminal Icon" />
-            <h3 className="launchpad-h3"> Terminal </h3>
+            < h3 className="launchpad-h3"> Twitter </h3>
           </div>
         </li>
 
@@ -144,7 +152,7 @@ function Launchpad(props) {
       <div className="launchpad-footer" onClick={animateSignature}>
         <hr className="launchpad-footer-hr" />
         <div className="launchpad-footer-text">
-          Pegassus Truth Terminal
+          Fart Dragon
         </div>
       </div>
     </div>

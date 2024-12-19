@@ -196,3 +196,24 @@
     width: 64px;
   }
 }
+@keyframes bobbing {
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-5px); /* Move up slightly */
+  }
+  150% {
+    transform: translateY(0);
+  }
+}
+
+.background-placeholder {
+  background-image: url('../../static/hugo-theme-cactus-logo.png'); /* Adjust the path as necessary */
+  background-size: 35%; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  width: 100%; /* Ensure it takes full width */
+  height: 100%; /* Ensure it takes full height */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  animation: bobbing 2s ease-in-out infinite; /* Apply the bobbing animation */
+}
