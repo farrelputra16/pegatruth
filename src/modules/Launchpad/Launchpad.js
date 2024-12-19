@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 /* Static assets */
 import Braavos_Terminal_Icon from "../../static/terminal_icon.png";
@@ -8,15 +8,13 @@ import Hugo_Theme_Icon from "../../static/hugo-theme-cactus-logo.png";
 import Signature from "../../static/tuna_cici_sign_bw.svg";
 import SignatureGIF from "../../static/tuna_cici_sign_bw.gif";
 
-/* Modules */
-
 /* CSS */
 import "./Launchpad.css";
 
 /* Shapes */
 function importAll(r) {
   let shapes = {};
-    r.keys().forEach((item, index) => { shapes[item.replace('./', '')] = r(item); });
+  r.keys().forEach((item) => { shapes[item.replace('./', '')] = r(item); });
   return shapes;
 }
 
@@ -33,7 +31,8 @@ function Launchpad(props) {
         navigate("/terminal", { replace: true });
         break;
       case "blog":
-        window.location.href = "/blog";
+        // Redirect to the Telegram link
+        window.location.href = "https://t.me/pegatruth";
         break;
       default:
         break;
@@ -48,38 +47,34 @@ function Launchpad(props) {
       signature.classList.add("fade-in");
       signature.src = Signature;
     }, 4500);
-
   };
 
-  /* Thanks to : https://codepen.io/yaclive/pen/EayLYO */
   useEffect(() => {
-    /* Initialize the canvas */
     const canvas = document.getElementById("launchpadCanvas");
     
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     function changeBackground() {
-      /* Set max amount depeding on the screen size */
       const launchpadCanvas = document.getElementById("launchpadCanvas");
       if (!launchpadCanvas) {
         return;
       }
 
-      let maxAmout = 0;
+      let maxAmount = 0;
       if (window.innerWidth < 768) {
-        maxAmout = 6;
+        maxAmount = 6;
       } else if (window.innerWidth < 1024) {
-        maxAmout = 10;
+        maxAmount = 10;
       } else {
-        maxAmout = 12;
+        maxAmount = 12;
       }
 
       const randomImage = [];
       const randomWidth = [];
       const random2DPos = [];
 
-      for (let i = 0; i < maxAmout; i++) {
+      for (let i = 0; i < maxAmount; i++) {
         const random = Math.floor(Math.random() * Object.keys(shapes).length);
 
         randomImage.push(shapes[Object.keys(shapes)[random]]);
@@ -100,11 +95,10 @@ function Launchpad(props) {
 
       launchpadCanvas.style.opacity = 1;
       setTimeout(() => {
-        if (launchpadCanvas) {launchpadCanvas.style.opacity = 0;}
+        if (launchpadCanvas) { launchpadCanvas.style.opacity = 0; }
       }, 2000);
     }
 
-    /* Animate both terminalApp and blogApp */
     setTimeout(() => {
       const terminalApp = document.getElementById("terminalApp");
       if (terminalApp) {
@@ -113,14 +107,12 @@ function Launchpad(props) {
 
       setTimeout(() => {
         const blogApp = document.getElementById("blogApp");
-
         if (blogApp) {
           blogApp.classList.add("shake-like-nicki");
         }
       }, 1000);
     }, 1000);
 
-    // Dynamic background images
     changeBackground();
     const bgLoop = setInterval(changeBackground, 4000);
 
@@ -144,18 +136,15 @@ function Launchpad(props) {
         <li id="blogApp" className="launchpad-li" onClick={launchApp} data-app="blog">
           <div className="launchpad-app">
             <img className="launchpad-icon" src={Hugo_Theme_Icon} alt="Braavos Blog Icon" />
-            <h3 className="launchpad-h3"> Blog </h3> 
+            <h3 className="launchpad-h3"> Telegram </h3> 
           </div>
         </li>
       </div>
 
       <div className="launchpad-footer" onClick={animateSignature}>
-        <img id="launchpadSignature" className="launchpad-signature fade-in" src={Signature} alt="Tuna Cici's Signature" />
-
         <hr className="launchpad-footer-hr" />
-
         <div className="launchpad-footer-text">
-          Pasteleft &#9752; 2024 - Braavos Launchpad
+          Pegassus Truth Terminal
         </div>
       </div>
     </div>
