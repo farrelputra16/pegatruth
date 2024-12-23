@@ -33,7 +33,7 @@ function Launchpad(props) {
         break;
       case "blog":
         // Redirect to Telegram link
-        window.location.href = "https://t.me/fartdragonn";
+        window.location.href = "https://t.me/hachyCTO";
         break;
       default:
         break;
