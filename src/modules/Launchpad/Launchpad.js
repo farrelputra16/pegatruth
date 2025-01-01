@@ -29,11 +29,11 @@ function Launchpad(props) {
     switch (app) {
       case "terminal":
         // Redirect to Twitter link
-        window.location.href = "https://x.com/hachikocto";
+        window.location.href = "https://x.com/NewYearsDegen";
         break;
       case "blog":
         // Redirect to Telegram link
-        window.location.href = "https://t.me/hachyCTO";
+        window.location.href = "https://t.me/NewYearsDegen";
         break;
       default:
         break;
@@ -152,7 +152,7 @@ function Launchpad(props) {
       <div className="launchpad-footer" onClick={animateSignature}>
         <hr className="launchpad-footer-hr" />
         <div className="launchpad-footer-text">
-          Hachy
+          New Years Degen
         </div>
       </div>
     </div>
