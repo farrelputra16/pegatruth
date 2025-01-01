@@ -130,7 +130,12 @@ function Launchpad(props) {
   style={{
 
   }}
+
+  
 ></div>
+<div className="terminal-text">
+        <p>CA : </p>
+      </div>
       <canvas id="launchpadCanvas" className="launchpad-canvas"></canvas>
 
       <div className="launchpad-grid">

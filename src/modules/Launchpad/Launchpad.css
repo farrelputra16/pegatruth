@@ -9,7 +9,17 @@
   align-items: center;
   justify-content: center;
 }
-
+.terminal-text {
+  position: absolute; /* Position it in the center */
+  top: 15%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the element's own size */
+  color: #00ff00; /* Green text color */
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  z-index: 10; /* Ensure it appears above other elements */
+}
 .launchpad-canvas {
   position: absolute;
   top: 0;
