@@ -14,7 +14,7 @@
   top: 15%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust for the element's own size */
-  color: #00ff00; /* Green text color */
+  color: PINK; /* Green text color */
   font-family: 'Courier New', Courier, monospace; /* Monospaced font */
   border-radius: 5px; /* Rounded corners */
   text-align: center; /* Center the text */

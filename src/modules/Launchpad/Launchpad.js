@@ -134,7 +134,7 @@ function Launchpad(props) {
   
 ></div>
 <div className="terminal-text">
-        <p>CA : </p>
+        <p>CA : EfyPQ95AUkTxr2zgAiqLWnJAEEDV8vung5EWv2Xw285E</p>
       </div>
       <canvas id="launchpadCanvas" className="launchpad-canvas"></canvas>
 
