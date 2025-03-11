@@ -210,7 +210,7 @@ function Launchpad(props) {
             },
             body: JSON.stringify({
               messages: messagesToSend,
-              model: "mixtral-8x7b-32768",
+              model: "gemma2-9b-it",
             }),
           });
 
