@@ -8,7 +8,7 @@
 }
 
 .terminal-text {
-  font-size: 5vw; /* Ukuran font relatif terhadap lebar viewport */
+  font-size: 3vw; /* Ukuran font relatif terhadap lebar viewport */
   font-weight: bold;
   position: absolute;
   top: 15%;
@@ -239,8 +239,8 @@
 }
 
 .chatbot-toggle {
-  width: 70px;
-  height: 70px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background-color: transparent; /* Untuk gambar Pain */
   border: none;
