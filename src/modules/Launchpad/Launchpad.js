@@ -202,7 +202,7 @@ function Launchpad(props) {
               ]
             : [{ role: "user", content: inputValue }];
 
-          const response = await fetch("https://api.groq.com/v1/chat/completions", {
+          const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
             method: "POST",
             headers: {
               Authorization: "Bearer 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",
