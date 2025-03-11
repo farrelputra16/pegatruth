@@ -1,39 +1,36 @@
 .launchpad {
   color: #fafafa;
-
-  height: 95%;
-
+  height: 95vh; /* Gunakan vh agar sesuai tinggi layar */
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 }
+
 .terminal-text {
-  font-size:30px;
+  font-size: 5vw; /* Ukuran font relatif terhadap lebar viewport */
   font-weight: bold;
-  position: absolute; /* Position it in the center */
-  top: 15%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for the element's own size */
-  color: red; /* Green text color */
-  font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-  border-radius: 5px; /* Rounded corners */
-  text-align: center; /* Center the text */
-  z-index: 10; /* Ensure it appears above other elements */
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 10;
 }
+
 .launchpad-canvas {
   position: absolute;
   top: 0;
-
   z-index: -1;
-
   background-repeat: no-repeat;
-
   opacity: 0;
-
   -webkit-transition: opacity 2.0s ease-in-out;
   transition: opacity 2.0s ease-in-out;
+  width: 100%; /* Pastikan canvas mengisi lebar layar */
+  height: 100%; /* Pastikan canvas mengisi tinggi layar */
 }
 
 .launchpad-h1 {
@@ -44,16 +41,13 @@
 .launchpad-grid {
   display: flex;
   flex-direction: row;
-
   gap: 4rem;
-  padding: 1rem 2rem 1rem 2rem;
-
+  padding: 1rem 2rem;
   border-radius: 16px;
   background: rgba(33, 33, 33, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(80, 80, 80, 0.25);
-
   justify-content: center;
 }
 
@@ -68,9 +62,7 @@
 .launchpad-app {
   display: flex;
   flex-direction: column;
-
   align-items: center;
-
   transition: all 0.1s ease-in-out;
 }
 
@@ -84,26 +76,28 @@
 
 .launchpad-icon {
   width: 72px;
-
-  -webkit-box-reflect: below 2px
-  -webkit-gradient(linear, left top, left bottom, from(transparent),
-    color-stop(0.9, transparent), to(rgba(255,255,255,.5)));
+  -webkit-box-reflect: below 2px -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(transparent),
+      color-stop(0.9, transparent),
+      to(rgba(255, 255, 255, 0.5))
+    );
 }
 
 .launchpad-footer {
   position: absolute;
   bottom: 0.25rem;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
+  width: 100%; /* Pastikan footer mengisi lebar */
 }
 
 .launchpad-signature {
   width: 10rem;
-
   -webkit-filter: invert(100%);
   filter: invert(100%);
 }
@@ -111,10 +105,9 @@
 .launchpad-footer-hr {
   width: 90%;
   height: 1px;
-
   background: rgba(255, 255, 255, 0.33);
   border: none;
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .launchpad-footer-text {
@@ -130,105 +123,113 @@
 }
 
 @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Thanks to: https://codepen.io/Tcip/pen/LYXaxab */
+/* Shake Animation */
 .shake-like-nicki {
-	animation: shake 500ms ease-out;
+  animation: shake 500ms ease-out;
 }
 
 @keyframes shake {
-	0% {
-		transform: translateX(0);
-	}
-	5% {
-		transform: translateX(-6px);
-	}
-	15% {
-		transform: translateX(6px);
-	}
-	25% {
-		transform: translateX(-6px);
-	}
-	35% {
-		transform: translateX(6px);
-	}
-	45% {
-		transform: translateX(-6px);
-	}
-	55% {
-		transform: translateX(6px);
-	}
-	65% {
-		transform: translateX(-6px);
-	}
-	75% {
-		transform: translateX(4px);
-	}
-	85% {
-		transform: translateX(-4px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@media screen and (max-width: 768px) {
-  .launchpad-signature {
-    width: 8rem;
+  0% {
+    transform: translateX(0);
   }
-
-  .launchpad-h1 {
-    font-size: 1.25rem;
+  5% {
+    transform: translateX(-6px);
   }
-
-  .launchpad-icon {
-    width: 64px;
+  15% {
+    transform: translateX(6px);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  35% {
+    transform: translateX(6px);
+  }
+  45% {
+    transform: translateX(-6px);
+  }
+  55% {
+    transform: translateX(6px);
+  }
+  65% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+  85% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
+
 @keyframes bobbing {
   0% {
     transform: translateY(0);
   }
   70% {
-    transform: translateY(-5px); /* Move up slightly */
+    transform: translateY(-5px);
   }
-  150% {
+  100% { /* Ubah 150% menjadi 100% agar animasi lebih mulus */
     transform: translateY(0);
   }
 }
 
 .background-placeholder {
-  background-image: url('../../static/hugo-theme-cactus-logo.png'); /* Adjust the path as necessary */
-  background-size: 55%; /* Adjust as needed */
-  background-position: center; /* Adjust as needed */
-  width: 100%; /* Ensure it takes full width */
-  height: 100%; /* Ensure it takes full height */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  animation: bobbing 2s ease-in-out infinite; /* Apply the bobbing animation */
+  background-image: url("../../static/hugo-theme-cactus-logo.png");
+  background-size: 55%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  animation: bobbing 2s ease-in-out infinite;
 }
+
 /* Chatbot CSS */
 .chatbot-panel {
   position: fixed;
@@ -241,21 +242,27 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: red;
-  color: white;
+  background-color: transparent; /* Untuk gambar Pain */
   border: none;
-  font-size: 24px;
+  padding: 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
 }
 
 .chatbot-toggle:hover {
-  background-color: red;
+  opacity: 0.8;
 }
 
 .chatbot-container {
-  width: 300px;
-  height: 400px;
+  width: 80vw; /* Relatif terhadap lebar layar */
+  max-width: 300px; /* Batas maksimum untuk desktop */
+  height: 60vh; /* Relatif terhadap tinggi layar */
+  max-height: 400px; /* Batas maksimum untuk desktop */
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -269,6 +276,7 @@
   color: white;
   padding: 10px;
   text-align: center;
+  font-size: 1.2rem; /* Ukuran font lebih besar untuk header */
 }
 
 .chatbot-body {
@@ -282,6 +290,7 @@
   padding: 8px 12px;
   border-radius: 5px;
   max-width: 80%;
+  font-size: 0.9rem; /* Ukuran font yang lebih kecil untuk pesan */
 }
 
 .chat-message.user {
@@ -311,6 +320,7 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   margin-right: 5px;
+  font-size: 0.9rem; /* Ukuran font input */
 }
 
 .chatbot-footer button {
@@ -320,10 +330,11 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 0.9rem; /* Ukuran font tombol */
 }
 
 .chatbot-footer button:hover {
-  background: red;
+  background: darkred; /* Hover lebih gelap untuk kontras */
 }
 
 @keyframes blink {
@@ -335,5 +346,86 @@
   }
   100% {
     opacity: 0.2;
+  }
+}
+
+/* Media Queries untuk Responsif */
+@media screen and (max-width: 768px) {
+  .launchpad-signature {
+    width: 8rem;
+  }
+
+  .launchpad-h1 {
+    font-size: 1.25rem;
+  }
+
+  .launchpad-icon {
+    width: 64px;
+  }
+
+  .terminal-text {
+    font-size: 4vw; /* Sedikit lebih kecil untuk tablet */
+  }
+
+  .chatbot-toggle {
+    width: 60px; /* Sedikit lebih kecil untuk tablet */
+    height: 60px;
+  }
+
+  .chatbot-container {
+    width: 85vw; /* Lebih lebar di tablet */
+    height: 50vh; /* Sedikit lebih pendek */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .launchpad {
+    height: 100vh; /* Gunakan seluruh tinggi layar di HP */
+  }
+
+  .terminal-text {
+    font-size: 6vw; /* Lebih besar di HP untuk keterbacaan */
+    top: 10%; /* Sedikit lebih atas */
+  }
+
+  .background-placeholder {
+    background-size: 70%; /* Lebih besar untuk HP */
+  }
+
+  .launchpad-footer {
+    bottom: 0; /* Pastikan footer di bawah */
+  }
+
+  .launchpad-signature {
+    width: 6rem; /* Lebih kecil untuk HP */
+  }
+
+  .chatbot-toggle {
+    width: 50px; /* Ukuran lebih kecil untuk HP */
+    height: 50px;
+    font-size: 20px; /* Ukuran X lebih kecil */
+  }
+
+  .chatbot-container {
+    width: 90vw; /* Hampir penuh di HP */
+    height: 70vh; /* Lebih tinggi untuk konten */
+    max-height: 350px; /* Batas maksimum lebih kecil */
+  }
+
+  .chatbot-header {
+    font-size: 1rem; /* Header lebih kecil */
+  }
+
+  .chat-message {
+    font-size: 0.8rem; /* Pesan lebih kecil */
+  }
+
+  .chatbot-footer input {
+    font-size: 0.8rem; /* Input lebih kecil */
+  }
+
+  .chatbot-footer button {
+    font-size: 0.8rem; /* Tombol lebih kecil */
+    padding: 4px 8px; /* Padding lebih kecil */
   }
 }
